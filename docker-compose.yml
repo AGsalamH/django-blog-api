@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile
+    image: django-blog
+    container_name: django
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
