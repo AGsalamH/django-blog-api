@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'blog.posts',
     'blog.core',
+    'blog.users',
 
 ]
 
