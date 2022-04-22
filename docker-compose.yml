@@ -9,5 +9,22 @@ services:
     container_name: django
     ports:
       - '8000:8000'
+    env_file:
+      - ./.envs/.django
     volumes:
       - .:/app
+    depends_on:
+      - postgres
+
+
+  postgres:
+    image: 'postgres'
+    container_name: postgres
+    env_file:
+      - ./.envs/.postgres
+    volumes:
+      - postgres_blog_backup:/var/lib/postgresql/data
+
+
+volumes:
+  postgres_blog_backup:
