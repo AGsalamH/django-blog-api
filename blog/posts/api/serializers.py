@@ -4,11 +4,9 @@ from django.contrib.auth import get_user_model
 from blog.posts.models import Post
 
 
-UserModel = get_user_model()
-
 class CreatorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UserModel
+        model = get_user_model()
         fields = ('username',)
 
 
